@@ -1,0 +1,89 @@
+{
+  "series_metadata": [
+    {
+      "series": "m2_bln_rub",
+      "source_file": "data (21).xls",
+      "frequency": "monthly",
+      "start": "2010-01-01",
+      "end": "2015-12-01",
+      "observations": 72,
+      "transform_note": "Raw monthly M2 series."
+    },
+    {
+      "series": "cpi_all_items_index_2010_100",
+      "source_file": "data (22).xls",
+      "frequency": "monthly",
+      "start": "2011-01-01",
+      "end": "2018-12-01",
+      "observations": 96,
+      "transform_note": "Raw monthly CPI index level for all goods and services."
+    },
+    {
+      "series": "usd_rub_avg",
+      "source_file": "data (23).xls",
+      "frequency": "monthly",
+      "start": "2002-01-01",
+      "end": "2011-12-01",
+      "observations": 120,
+      "transform_note": "Monthly average USD/RUB exchange rate."
+    },
+    {
+      "series": "key_rate_pct",
+      "source_file": "data (24).xls",
+      "frequency": "monthly_from_irregular",
+      "start": "2019-06-01",
+      "end": "2025-10-01",
+      "observations": 77,
+      "transform_note": "Converted from decision dates to monthly series using last observed rate within each month (forward fill between CB meetings)."
+    }
+  ],
+  "pairwise_overlap": [
+    {
+      "left": "m2_bln_rub",
+      "right": "cpi_all_items_index_2010_100",
+      "shared_observations": 60,
+      "start": "2011-01-01",
+      "end": "2015-12-01"
+    },
+    {
+      "left": "m2_bln_rub",
+      "right": "usd_rub_avg",
+      "shared_observations": 24,
+      "start": "2010-01-01",
+      "end": "2011-12-01"
+    },
+    {
+      "left": "m2_bln_rub",
+      "right": "key_rate_pct",
+      "shared_observations": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "left": "cpi_all_items_index_2010_100",
+      "right": "usd_rub_avg",
+      "shared_observations": 12,
+      "start": "2011-01-01",
+      "end": "2011-12-01"
+    },
+    {
+      "left": "cpi_all_items_index_2010_100",
+      "right": "key_rate_pct",
+      "shared_observations": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "left": "usd_rub_avg",
+      "right": "key_rate_pct",
+      "shared_observations": 0,
+      "start": null,
+      "end": null
+    }
+  ],
+  "strict_intersection_observations": 0,
+  "strict_intersection_start": null,
+  "strict_intersection_end": null,
+  "passes_assignment_threshold": false,
+  "threshold_observations_required": 26
+}

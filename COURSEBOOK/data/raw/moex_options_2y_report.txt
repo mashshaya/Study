@@ -1,0 +1,77 @@
+MOEX options 2y MVP report
+
+tested discovery URLs
+- https://iss.moex.com/iss/securities.json?iss.meta=off&q=IMOEX&limit=100
+- https://iss.moex.com/iss/securities.json?iss.meta=off&q=MIX&limit=100
+- https://iss.moex.com/iss/securities.json?iss.meta=off&q=MX&limit=100
+
+metadata columns: secid, shortname, regnumber, name, isin, is_traded, emitent_id, emitent_title, emitent_inn, emitent_okpo, type, group, primary_boardid, marketprice_boardid, _query
+number of raw metadata rows: 246
+number of filtered candidates: 160
+first 50 candidate SECIDs: IM2600CE6, IM2650CE6, IM2700CE6, IM2600CE6A, IM2850CQ6A, IM2650CQ6, IM2750CE6, IM2800CE6, IM2850CQ6, IM2750CD6D, IM2600CD6E, IM2650CE6A, IM2500CE6, IM2650CD6D, IM2750CQ6, IM2800CQ6A, IM2500CE6A, IM2700CD6E, IM2700CQ6, IM2850CP6D, IM2850CP6E, IM2900CQ6, IM2900CQ6A, IM2550CE6, IM2700CD6D, IM2700CE6A, IM2750CD6E, IM2850CE6, IM2600CQ6, IM2650CD6E, IM2700CQ6A, IM2800CQ6, IM2900CP6E, IM2600CD6D, IM2900CP6D, IM2550CE6A, IM2650CD6, IM2700CD6, IM2750CF6, IM2750CQ6A, IM2900CE6, IM3000CQ6, IM2500CQ6, IM2550CQ6, IM2600CE6D, IM2750CP6, IM2800CD6, IM2800CP6D, IM2800CP6E, IM2950CQ6
+number of SECIDs with non-empty history: 1
+history columns: BOARDID, TRADEDATE, SECID, OPEN, LOW, HIGH, CLOSE, OPENPOSITIONVALUE, VALUE, VOLUME, OPENPOSITION, SETTLEPRICE, WAPRICE, CHANGE, QTY, NUMTRADES
+total history rows: 170
+date range: 2024-05-06 to 2024-12-30
+rows by year: 2024: 170
+rows by SECID top 20: IM2750CF6: 170
+IMOEX candles row count: 500
+IMOEX candles date range: 2023-01-03 to 2024-12-17
+
+failed SECIDs with error messages
+- none
+
+diagnostics
+- discovery query IMOEX: 100 rows
+- discovery query MIX: 100 rows
+- discovery query MX: 100 rows
+- candidate SECIDs truncated from 160 to 50
+- IM2600CE6: history returned zero rows
+- IM2650CE6: history returned zero rows
+- IM2700CE6: history returned zero rows
+- IM2600CE6A: history returned zero rows
+- IM2850CQ6A: history returned zero rows
+- IM2650CQ6: history returned zero rows
+- IM2750CE6: history returned zero rows
+- IM2800CE6: history returned zero rows
+- IM2850CQ6: history returned zero rows
+- IM2750CD6D: history returned zero rows
+- IM2600CD6E: history returned zero rows
+- IM2650CE6A: history returned zero rows
+- IM2500CE6: history returned zero rows
+- IM2650CD6D: history returned zero rows
+- IM2750CQ6: history returned zero rows
+- IM2800CQ6A: history returned zero rows
+- IM2500CE6A: history returned zero rows
+- IM2700CD6E: history returned zero rows
+- IM2700CQ6: history returned zero rows
+- IM2850CP6D: history returned zero rows
+- IM2850CP6E: history returned zero rows
+- IM2900CQ6: history returned zero rows
+- IM2900CQ6A: history returned zero rows
+- IM2550CE6: history returned zero rows
+- IM2700CD6D: history returned zero rows
+- IM2700CE6A: history returned zero rows
+- IM2750CD6E: history returned zero rows
+- IM2850CE6: history returned zero rows
+- IM2600CQ6: history returned zero rows
+- IM2650CD6E: history returned zero rows
+- IM2700CQ6A: history returned zero rows
+- IM2800CQ6: history returned zero rows
+- IM2900CP6E: history returned zero rows
+- IM2600CD6D: history returned zero rows
+- IM2900CP6D: history returned zero rows
+- IM2550CE6A: history returned zero rows
+- IM2650CD6: history returned zero rows
+- IM2700CD6: history returned zero rows
+- IM2750CQ6A: history returned zero rows
+- IM2900CE6: history returned zero rows
+- IM3000CQ6: history returned zero rows
+- IM2500CQ6: history returned zero rows
+- IM2550CQ6: history returned zero rows
+- IM2600CE6D: history returned zero rows
+- IM2750CP6: history returned zero rows
+- IM2800CD6: history returned zero rows
+- IM2800CP6D: history returned zero rows
+- IM2800CP6E: history returned zero rows
+- IM2950CQ6: history returned zero rows

@@ -1,0 +1,40 @@
+MM options + MXI futures clean dataset
+rows: 19574
+unique option SECIDs: 92
+unique underlying SECIDs: 5
+trade date min: 2024-01-03
+trade date max: 2026-05-19
+expiry min: 2026-04-16
+expiry max: 2027-06-17
+missing underlying_price share: 0.000000
+missing market_price share: 0.000000
+
+underlying contracts:
+MXI-12.26
+MXI-3.27
+MXI-6.26
+MXI-6.27
+MXI-9.26
+
+rows by year:
+year
+2024    6921
+2025    7359
+2026    5294
+
+missing share top 15:
+LOW                        0.860427
+CLOSE                      0.860427
+OPEN                       0.860427
+HIGH                       0.860427
+VOLUME                     0.851589
+VALUE                      0.851589
+OPENPOSITION               0.399203
+UNDERLYING_HIGH            0.274395
+UNDERLYING_LOW             0.274395
+UNDERLYING_CLOSE           0.274395
+UNDERLYING_VALUE           0.274395
+UNDERLYING_OPEN            0.274395
+UNDERLYING_VOLUME          0.274395
+underlying_price           0.000000
+UNDERLYING_OPENPOSITION    0.000000

@@ -1,0 +1,46 @@
+=== API availability check ===
+URL: https://iss.moex.com/iss/index.json
+Params: {"iss.meta": "off"}
+Status code: 200
+Top-level JSON keys: ['engines', 'markets', 'boards', 'boardgroups', 'durations', 'securitytypes', 'securitygroups', 'securitycollections']
+
+=== Search check ===
+URL: https://iss.moex.com/iss/securities.json
+Params: {"iss.meta": "off", "limit": 10, "q": "IMOEX"}
+Status code: 200
+Table names: ['securities']
+Securities columns: ['secid', 'shortname', 'regnumber', 'name', 'isin', 'is_traded', 'emitent_id', 'emitent_title', 'emitent_inn', 'emitent_okpo', 'type', 'group', 'primary_boardid', 'marketprice_boardid']
+First rows:
+       secid                     shortname             regnumber                                                                                    name         isin  is_traded  emitent_id                                    emitent_title emitent_inn emitent_okpo           type       group primary_boardid marketprice_boardid
+       IMOEX               Индекс МосБиржи                   NaN                                                                         Индекс МосБиржи RU000A0JP7K5          1         NaN                                              NaN         NaN          NaN    stock_index stock_index            SNDX                 NaN
+      IMOEX2  Индекс МосБиржи (все сессии)                   NaN IMOEX2 – значения индекса МосБиржи за весь торговый день, включая дополнительные сессии          NaN          1         NaN                                              NaN         NaN          NaN stock_index_eq stock_index            SNDX                 NaN
+      IMOEXW                        IMOEXW                   NaN                                                   Индекс МосБиржи – активное управление          NaN          1         NaN                                              NaN         NaN          NaN stock_index_eq stock_index            RTSI                 NaN
+    IMOEXCNY       Индекс МосБиржи в юанях                   NaN                                                                 Индекс МосБиржи в юанях          NaN          1         NaN                                              NaN         NaN          NaN stock_index_eq stock_index            RTSI                 NaN
+       EQMXE                 iNAV EQMX ETF                   NaN                       Расчетная цена одного пая биржевого ПИФа «Индекс МосБиржи» УК ВИМ          NaN          1         NaN                                              NaN         NaN          NaN stock_index_ie stock_index            INAV                 NaN
+    IMOEXDIV    Индекс дивидендов МосБиржи                   NaN                                                     Индекс дивидендов МосБиржи «брутто»          NaN          1         NaN                                              NaN         NaN          NaN stock_index_eq stock_index            RTSI                 NaN
+   IMOEXDIVN Индекс див МосБиржи нетто-рез                   NaN        Индекс дивидендов МосБиржи «нетто» (по налоговым ставкам российских организаций)          NaN          1         NaN                                              NaN         NaN          NaN stock_index_eq stock_index            RTSI                 NaN
+       TMOSA                     TMOS iNAV                   NaN                 Расчетная цена одного пая Биржевого ПИФа РФИ «Тинькофф Индекс МосБиржи»          NaN          1         NaN                                              NaN         NaN          NaN    stock_index stock_index            INAV                 NaN
+RU000A106SD7                    СберИОС582 4B02-612-01481-B-001P                                                           СберИОС 001Р-582R 5Г AC IMOEX RU000A106SD7          1       484.0 Публичное акционерное общество "Сбербанк России"  7707083893     00032537  exchange_bond stock_bonds            TQCB                TQCB
+RU000A103TL5                    СберИОС409 4B02-415-01481-B-001P                                                              СберИОС 001Р-409R 5Г IMOEX RU000A103TL5          1       484.0 Публичное акционерное общество "Сбербанк России"  7707083893     00032537  exchange_bond stock_bonds            TQCB                TQCB
+
+=== Known index candles check ===
+URL: https://iss.moex.com/iss/engines/stock/markets/index/boards/SNDX/securities/IMOEX/candles.json
+Params: {"from": "2024-01-03", "interval": 24, "iss.meta": "off", "till": "2024-01-03"}
+Status code: 200
+Candles columns: ['open', 'close', 'high', 'low', 'value', 'volume', 'begin', 'end']
+Returned rows:
+   open   close    high    low        value  volume               begin                 end
+3099.78 3130.23 3132.76 3099.1 2.599977e+10       0 2024-01-03 00:00:00 2024-01-03 23:59:59
+
+=== Known options history endpoint check ===
+URL: https://iss.moex.com/iss/history/engines/futures/markets/options/securities/AF39CE6.json
+Params: {"from": "2026-05-01", "iss.meta": "off", "till": "2026-05-19"}
+Status code: 200
+Table names: ['history', 'history.cursor']
+History columns: ['BOARDID', 'TRADEDATE', 'SECID', 'OPEN', 'LOW', 'HIGH', 'CLOSE', 'OPENPOSITIONVALUE', 'VALUE', 'VOLUME', 'OPENPOSITION', 'SETTLEPRICE', 'WAPRICE', 'CHANGE', 'QTY', 'NUMTRADES']
+Returned rows:
+BOARDID  TRADEDATE   SECID  OPEN  LOW  HIGH  CLOSE  OPENPOSITIONVALUE  VALUE  VOLUME  OPENPOSITION  SETTLEPRICE  WAPRICE  CHANGE  QTY  NUMTRADES
+   ROPD 2026-05-04 AF39CE6   0.0  0.0   0.0    0.0                0.0    0.0       0             0         7.85      0.0     0.0    0          0
+   ROPD 2026-05-05 AF39CE6   0.0  0.0   0.0    0.0                0.0    0.0       0             0         8.17      0.0     0.0    0          0
+   ROPD 2026-05-06 AF39CE6   0.0  0.0   0.0    0.0                0.0    0.0       0             0         8.98      0.0     0.0    0          0
+   ROPD 2026-05-11 AF39CE6   0.0  0.0   0.0    0.0                0.0    0.0       0             0         9.38      0.0     0.0    0          0

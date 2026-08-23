@@ -1,0 +1,38 @@
+{
+  "dataset_name": "final_dataset_29_30_32",
+  "series": [
+    {
+      "column": "cpi_all_items_index_2010_100",
+      "source_file": "data (29).xls",
+      "description": "Consumer price index for all goods and services.",
+      "unit": "index, 2010 average = 100"
+    },
+    {
+      "column": "net_foreign_assets_bln_rub",
+      "source_file": "data (30).xls",
+      "description": "Net foreign assets of credit organizations.",
+      "unit": "billion rubles"
+    },
+    {
+      "column": "m2_bln_rub",
+      "source_file": "data (32).xls",
+      "description": "Money aggregate M2.",
+      "unit": "billion rubles"
+    }
+  ],
+  "start_date": "2013-01-01",
+  "end_date": "2015-06-01",
+  "observations": 30,
+  "columns": [
+    "date",
+    "cpi_all_items_index_2010_100",
+    "net_foreign_assets_bln_rub",
+    "m2_bln_rub"
+  ],
+  "missing_values": {
+    "cpi_all_items_index_2010_100": 0,
+    "net_foreign_assets_bln_rub": 0,
+    "m2_bln_rub": 0
+  },
+  "assumption": "Net foreign assets are forward-filled from 2014-12 through 2015-06 to extend the common sample."
+}

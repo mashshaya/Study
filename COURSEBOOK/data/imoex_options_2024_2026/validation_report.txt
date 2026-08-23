@@ -1,0 +1,48 @@
+Validation report
+
+candidate source: data/imoex_options_2024_2026/historical_secids_candidates.parquet
+target date range: 2024-01-01 -> 2026-12-31
+candidate rows input: 381
+unique candidate SECIDs: 381
+validated SECIDs with non-empty history: 379
+empty-history SECIDs: 2
+failed SECIDs: 0
+
+top validated SECIDs:
+- {'secid': 'MM2500BR6', 'shortname': 'MXI-6.26M180626PA2500', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2550BR6', 'shortname': 'MXI-6.26M180626PA2550', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2600BF6', 'shortname': 'MXI-6.26M180626CA2600', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2600BR6', 'shortname': 'MXI-6.26M180626PA2600', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2650BF6', 'shortname': 'MXI-6.26M180626CA2650', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2700BF6', 'shortname': 'MXI-6.26M180626CA2700', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2700BR6', 'shortname': 'MXI-6.26M180626PA2700', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2750BF6', 'shortname': 'MXI-6.26M180626CA2750', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2750BR6', 'shortname': 'MXI-6.26M180626PA2750', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2800BF6', 'shortname': 'MXI-6.26M180626CA2800', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2800BR6', 'shortname': 'MXI-6.26M180626PA2800', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3050BL6', 'shortname': 'MXI-12.26M171226CA3050', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3100BI6', 'shortname': 'MXI-9.26M170926CA3100', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3100BL6', 'shortname': 'MXI-12.26M171226CA3100', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3150BC7', 'shortname': 'MXI-3.27M180327CA3150', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3150BI6', 'shortname': 'MXI-9.26M170926CA3150', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3200BC7', 'shortname': 'MXI-3.27M180327CA3200', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3200BI6', 'shortname': 'MXI-9.26M170926CA3200', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3200BL6', 'shortname': 'MXI-12.26M171226CA3200', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3250BL6', 'shortname': 'MXI-12.26M171226CA3250', 'history_rows': 604, 'first_tradedate': '2024-01-03', 'last_tradedate': '2026-05-19', 'rows_2024': 256, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3000BF6', 'shortname': 'MXI-6.26M180626CA3000', 'history_rows': 600, 'first_tradedate': '2024-01-08', 'last_tradedate': '2026-05-19', 'rows_2024': 252, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'IM2750CF7', 'shortname': 'IMOEXP160627CE2750', 'history_rows': 554, 'first_tradedate': '2024-03-15', 'last_tradedate': '2026-05-19', 'rows_2024': 206, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3300BF7', 'shortname': 'MXI-6.27M170627CA3300', 'history_rows': 554, 'first_tradedate': '2024-03-15', 'last_tradedate': '2026-05-19', 'rows_2024': 206, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM3450BF7', 'shortname': 'MXI-6.27M170627CA3450', 'history_rows': 554, 'first_tradedate': '2024-03-15', 'last_tradedate': '2026-05-19', 'rows_2024': 206, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2900BF6', 'shortname': 'MXI-6.26M180626CA2900', 'history_rows': 547, 'first_tradedate': '2024-01-08', 'last_tradedate': '2026-05-19', 'rows_2024': 199, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'IM2750CF6', 'shortname': 'IMOEXP170626CE2750', 'history_rows': 518, 'first_tradedate': '2024-05-06', 'last_tradedate': '2026-05-19', 'rows_2024': 170, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2850BF6', 'shortname': 'MXI-6.26M180626CA2850', 'history_rows': 503, 'first_tradedate': '2024-02-28', 'last_tradedate': '2026-05-19', 'rows_2024': 155, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'MM2850BR6', 'shortname': 'MXI-6.26M180626PA2850', 'history_rows': 503, 'first_tradedate': '2024-02-28', 'last_tradedate': '2026-05-19', 'rows_2024': 155, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'IM2650CI7', 'shortname': 'IMOEXP150927CE2650', 'history_rows': 491, 'first_tradedate': '2024-06-14', 'last_tradedate': '2026-05-19', 'rows_2024': 143, 'rows_2025': 254, 'rows_2026': 94}
+- {'secid': 'IM2650CL7', 'shortname': 'IMOEXP151227CE2650', 'history_rows': 426, 'first_tradedate': '2024-09-13', 'last_tradedate': '2026-05-19', 'rows_2024': 78, 'rows_2025': 254, 'rows_2026': 94}
+
+empty-history SECIDs:
+- IMOEXF
+- IMOEX_CLT
+
+failed SECIDs:
+- none

@@ -1,0 +1,69 @@
+Download report
+
+validated source: data/imoex_options_2024_2026/validated_historical_secids.parquet
+requested range: 2024-01-01 -> 2026-12-31
+validated SECIDs input: 379
+downloaded SECIDs output: 379
+total rows: 36588
+failed SECIDs: 0
+empty SECIDs: 0
+output parquet: data/imoex_options_2024_2026/imoex_options_daily_history_2024_2026.parquet
+
+coverage by year:
+- {'year': 2024, 'rows': 7799, 'unique_secids': 42}
+- {'year': 2025, 'rows': 14765, 'unique_secids': 192}
+- {'year': 2026, 'rows': 14024, 'unique_secids': 292}
+
+top rows by SECID:
+- {'SECID': 'MM2500BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2550BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2600BF6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2600BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2650BF6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2700BF6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2700BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2750BF6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2750BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2800BF6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2800BR6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3050BL6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3100BI6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3100BL6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3150BC7', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3150BI6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3200BC7', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3200BI6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3200BL6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3250BL6', 'rows': 604, 'first_tradedate': Timestamp('2024-01-03 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3000BF6', 'rows': 600, 'first_tradedate': Timestamp('2024-01-08 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'IM2750CF7', 'rows': 554, 'first_tradedate': Timestamp('2024-03-15 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3300BF7', 'rows': 554, 'first_tradedate': Timestamp('2024-03-15 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM3450BF7', 'rows': 554, 'first_tradedate': Timestamp('2024-03-15 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2900BF6', 'rows': 547, 'first_tradedate': Timestamp('2024-01-08 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'IM2750CF6', 'rows': 518, 'first_tradedate': Timestamp('2024-05-06 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2850BF6', 'rows': 503, 'first_tradedate': Timestamp('2024-02-28 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'MM2850BR6', 'rows': 503, 'first_tradedate': Timestamp('2024-02-28 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'IM2650CI7', 'rows': 491, 'first_tradedate': Timestamp('2024-06-14 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+- {'SECID': 'IM2650CL7', 'rows': 426, 'first_tradedate': Timestamp('2024-09-13 00:00:00'), 'last_tradedate': Timestamp('2026-05-19 00:00:00')}
+
+missing share by column:
+- {'column': 'SECID', 'missing_share': 0.0}
+- {'column': 'TRADEDATE', 'missing_share': 0.0}
+- {'column': 'OPEN', 'missing_share': 0.7855307751175249}
+- {'column': 'HIGH', 'missing_share': 0.7855307751175249}
+- {'column': 'LOW', 'missing_share': 0.7855307751175249}
+- {'column': 'CLOSE', 'missing_share': 0.7855307751175249}
+- {'column': 'SETTLEPRICE', 'missing_share': 0.0}
+- {'column': 'VALUE', 'missing_share': 0.7795178747130207}
+- {'column': 'VOLUME', 'missing_share': 0.7795178747130207}
+- {'column': 'OPENPOSITION', 'missing_share': 0.4617087569694982}
+- {'column': 'NUMTRADES', 'missing_share': 0.0}
+- {'column': 'option_type', 'missing_share': 0.0}
+- {'column': 'strike', 'missing_share': 0.0}
+- {'column': 'expiry_date', 'missing_share': 0.0}
+
+failed SECIDs:
+- none
+
+empty SECIDs:
+- none

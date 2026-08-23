@@ -1,0 +1,89 @@
+OLS SPECIFICATION 1
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     abs_error_crr_hv_63d   R-squared:                       0.011
+Model:                              OLS   Adj. R-squared:                  0.011
+Method:                   Least Squares   F-statistic:                     15.40
+Date:                  Thu, 11 Jun 2026   Prob (F-statistic):           9.82e-05
+Time:                          02:26:26   Log-Likelihood:            -1.0700e+05
+No. Observations:                 18058   AIC:                         2.140e+05
+Df Residuals:                     18056   BIC:                         2.140e+05
+Df Model:                             1                                         
+Covariance Type:                cluster                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept        101.3824      3.534     28.687      0.000      94.456     108.309
+high_vol_dummy    21.4478      5.465      3.924      0.000      10.736      32.159
+==============================================================================
+Omnibus:                     4914.918   Durbin-Watson:                   0.431
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            12661.047
+Skew:                           1.483   Prob(JB):                         0.00
+Kurtosis:                       5.833   Cond. No.                         2.45
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+OLS SPECIFICATION 2
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     abs_error_crr_hv_63d   R-squared:                       0.248
+Model:                              OLS   Adj. R-squared:                  0.248
+Method:                   Least Squares   F-statistic:                     308.5
+Date:                  Thu, 11 Jun 2026   Prob (F-statistic):          1.53e-116
+Time:                          02:26:26   Log-Likelihood:            -1.0452e+05
+No. Observations:                 18058   AIC:                         2.090e+05
+Df Residuals:                     18054   BIC:                         2.091e+05
+Df Model:                             3                                         
+Covariance Type:                cluster                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+Intercept            68.2147      3.168     21.534      0.000      62.006      74.424
+high_vol_dummy      -17.6027      6.280     -2.803      0.005     -29.912      -5.294
+DTE_DAYS              0.1809      0.010     18.756      0.000       0.162       0.200
+abs_log_moneyness  -206.6632      8.389    -24.636      0.000    -223.105    -190.222
+==============================================================================
+Omnibus:                     3370.420   Durbin-Watson:                   0.364
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             9241.850
+Skew:                           1.002   Prob(JB):                         0.00
+Kurtosis:                       5.875   Cond. No.                     3.88e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The condition number is large, 3.88e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+OLS SPECIFICATION 3
+                             OLS Regression Results                             
+================================================================================
+Dep. Variable:     abs_error_crr_hv_63d   R-squared:                       0.267
+Model:                              OLS   Adj. R-squared:                  0.266
+Method:                   Least Squares   F-statistic:                     455.9
+Date:                  Thu, 11 Jun 2026   Prob (F-statistic):          2.22e-171
+Time:                          02:26:26   Log-Likelihood:            -1.0430e+05
+No. Observations:                 18058   AIC:                         2.086e+05
+Df Residuals:                     18053   BIC:                         2.086e+05
+Df Model:                             4                                         
+Covariance Type:                cluster                                         
+==============================================================================================
+                                 coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+Intercept                     80.5583      3.699     21.777      0.000      73.308      87.809
+C(option_type_norm)[T.put]   -28.2932      1.749    -16.179      0.000     -31.721     -24.866
+high_vol_dummy               -15.6990      6.213     -2.527      0.012     -27.877      -3.522
+DTE_DAYS                       0.1617      0.010     16.133      0.000       0.142       0.181
+abs_log_moneyness           -178.3081      8.782    -20.304      0.000    -195.521    -161.096
+==============================================================================
+Omnibus:                     3326.662   Durbin-Watson:                   0.362
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             9180.086
+Skew:                           0.988   Prob(JB):                         0.00
+Kurtosis:                       5.880   Cond. No.                     4.07e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The condition number is large, 4.07e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
