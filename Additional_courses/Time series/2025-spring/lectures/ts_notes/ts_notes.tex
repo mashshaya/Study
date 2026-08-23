@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage{vkCourseML}
+%\usepackage{vkCourseML}
+\hypersetup{unicode=true}
+%\usepackage[a4paper]{geometry}
+\usepackage[hyphenbreaks]{breakurl}
+
+\interfootnotelinepenalty=10000
+\newcommand{\dx}[1]{\,\mathrm{d}#1} % маленький отступ и прямая d
+
+\setcounter{tocdepth}{1}
+
+\graphicspath{{images/}{../images/}}
+\usepackage{subfiles}
+
+
+
+\usepackage{tikz}
+
+\begin{document}
+
+	\newpage
+	\tableofcontents
+	
+	\newpage
+	\chapter{Введение}
+	\subfile{chapters/01_intro}
+	
+	
+	\newpage
+	\chapter{Алгоритмы декомпозиции}
+	\subfile{chapters/02_decompose}
+	
+
+	\newpage
+	\chapter{Сведение к табличной задаче}
+	\subfile{chapters/02_tables}
+
+	\newpage
+	\chapter{ETS}
+	\subfile{chapters/03_ETS}
+
+\newpage
+\begin{thebibliography}{1}
+	\bibitem{doob}
+	https://wikichi.ru/wiki/Doob\_decomposition\_theorem
+\end{thebibliography}
+
+
+	
+\end{document}
