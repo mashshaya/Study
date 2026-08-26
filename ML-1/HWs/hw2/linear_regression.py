@@ -1,10 +1,8 @@
 import numpy as np
 from descents import BaseDescent
-from dataclasses import dataclass
 from enum import auto, Enum
-from typing import Dict, Type, Optional
+from typing import Optional
 from scipy.sparse.linalg import svds
-import numpy as np
 
 
 class LossFunction(Enum):
@@ -45,22 +43,22 @@ class LinearRegression:
         e = X @ self.w - y
         
         if self.loss_function is LossFunction.MSE:
-            gradient = (2 / l) * (X.T @ e) + 2 * self.l2_coef * self.w
+            gradient = (2 / l) * (X.T @ e) + self.l2_coef * self.w
             
         elif self.loss_function is LossFunction.MAE:
-            gradient = (1 / l) * (X.T @ np.sign(e))+ 2 * self.l2_coef * self.w
+            gradient = (1 / l) * (X.T @ np.sign(e)) + self.l2_coef * self.w
 
         elif self.loss_function is LossFunction.LogCosh:
-            gradient = (1 / l) * (X.T @ np.tanh(e)) + 2 * self.l2_coef * self.w
+            gradient = (1 / l) * (X.T @ np.tanh(e)) + self.l2_coef * self.w
 
         elif self.loss_function is LossFunction.Huber:
             delta = 1.0  
             mask = np.abs(e) <= delta
             grad_component = np.where(mask, e, delta * np.sign(e))
-            gradient = (1 / l) * (X.T @ grad_component) + 2 * self.l2_coef * self.w
+            gradient = (1 / l) * (X.T @ grad_component) + self.l2_coef * self.w
 
         else:
-            raise NotImplementedError(":((")
+            raise NotImplementedError("Unknown loss function")
         
         return gradient
 
@@ -70,22 +68,23 @@ class LinearRegression:
         e = X @ self.w - y
 
         if self.loss_function is LossFunction.MSE:
-            loss = (1 / l) * np.sum(e ** 2) + self.l2_coef * np.sum(self.w ** 2)
+            loss = (1 / l) * np.sum(e ** 2) + 0.5 * self.l2_coef * np.sum(self.w ** 2)
 
         elif self.loss_function is LossFunction.MAE:
-            loss = (1 / l) * np.sum(np.abs(e)) + self.l2_coef * np.sum(self.w ** 2)
+            loss = (1 / l) * np.sum(np.abs(e)) + 0.5 * self.l2_coef * np.sum(self.w ** 2)
 
         elif self.loss_function is LossFunction.LogCosh:
-            loss = (1 / l) * np.sum(np.log(np.cosh(e))) + self.l2_coef * np.sum(self.w ** 2)
+            loss = (1 / l) * np.sum(np.logaddexp(e, -e) - np.log(2)) + 0.5 * self.l2_coef * np.sum(self.w ** 2)
 
         elif self.loss_function is LossFunction.Huber:
             delta = 1.0
             mask = np.abs(e) <= delta
             loss = (1 / l) * np.sum(
-                np.where(mask, 0.5 * e ** 2, delta * (np.abs(e) - 0.5 * delta))) + self.l2_coef * np.sum(self.w ** 2)
+                np.where(mask, 0.5 * e ** 2, delta * (np.abs(e) - 0.5 * delta))
+            ) + 0.5 * self.l2_coef * np.sum(self.w ** 2)
 
         else:
-            raise NotImplementedError(":((")
+            raise NotImplementedError("Unknown loss function")
         return loss
 
 
@@ -94,30 +93,31 @@ class LinearRegression:
 
         if self.optimizer is None:
             I = np.eye(X.shape[1])
-            self.w = np.linalg.inv(X.T @ X + self.l2_coef * I) @ X.T @ y
+            self.w = np.linalg.pinv(X.T @ X + self.l2_coef * I) @ X.T @ y
             self.loss_history = [self.compute_loss(X, y)]
             return self
 
         elif self.optimizer == "SVD":
-            # усечённое SVD с 4 компонентами
-            U, s, Vt = svds(X, k=4)
-            Σ_inv = np.diag(1 / s)
-            self.w = Vt.T @ Σ_inv @ U.T @ y
+            k = min(4, min(X.shape) - 1)
+            U, s, Vt = svds(X, k=k)
+            self.w = Vt.T @ np.diag(1 / s) @ U.T @ y
             self.loss_history = [self.compute_loss(X, y)]
             return self
 
         elif isinstance(self.optimizer, BaseDescent):
-            self.w = np.zeros(X.shape[1])   
+            self.optimizer.set_model(self)
+            self.optimizer.iteration = 0
+            self.loss_history = []
+            self.w = np.zeros(X.shape[1])
+            self.loss_history.append(self.compute_loss(X, y))
             for _ in range(self.max_iter):
                 delta_w = self.optimizer.step()
-                self.loss_history.append(self.compute_loss(X, y))
                 if np.any(np.isnan(delta_w)):
                     break
+                self.loss_history.append(self.compute_loss(X, y))
                 if np.linalg.norm(delta_w) ** 2 < self.tolerance:
                     break
             return self
 
         else:
             raise ValueError("Unknown optimizer type")
-
-

@@ -10,13 +10,13 @@ from sklearn.metrics import roc_auc_score
 from typing import Optional
 from tqdm.auto import tqdm
 
-from sklearn.base import ClassifierMixin
+from sklearn.base import BaseEstimator, ClassifierMixin
 
 import matplotlib.pyplot as plt
 from collections.abc import Iterable
 
 
-class Boosting(ClassifierMixin):
+class Boosting(ClassifierMixin, BaseEstimator):
 
     def __init__(
         self,
@@ -165,7 +165,6 @@ class Boosting(ClassifierMixin):
         if eval_set is not None:
             X_valid, y_valid = eval_set
             valid_predictions = np.zeros(X_valid.shape[0])
-            valid_predictions = np.zeros(X_valid.shape[0])
             valid_predictions_history = []
 
         best_score = -np.inf
@@ -178,13 +177,6 @@ class Boosting(ClassifierMixin):
 
         for i in iterator:
             self.partial_fit(X_train, y_train)
-
-            self.history["train_loss"].append(
-                self.loss_fn(y_train, self._train_predictions)
-            )
-            self.history["train_roc_auc"].append(
-                roc_auc_score(y_train == 1, self.sigmoid(self._train_predictions))
-            )
 
             if eval_set is not None:
                 
@@ -248,6 +240,10 @@ class Boosting(ClassifierMixin):
 
         p = self.sigmoid(z)
         return np.column_stack([1.0 - p, p])
+
+
+    def predict(self, X: np.ndarray):
+        return np.where(self.predict_proba(X)[:, 1] >= 0.5, 1, -1)
 
 
     def find_optimal_gamma(self, y: np.ndarray, old_predictions: np.ndarray, new_predictions: np.ndarray) -> float:

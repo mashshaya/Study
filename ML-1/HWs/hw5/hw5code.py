@@ -21,8 +21,8 @@ def find_best_split(feature_vector, target_vector):
     :return gini_best: оптимальное значение критерия Джини (число)
     """
 
-    x = feature_vector
-    y = target_vector
+    x = np.asarray(feature_vector)
+    y = np.asarray(target_vector)
     order = np.argsort(x)
     x = x[order]
     y = y[order]
@@ -119,12 +119,14 @@ class DecisionTree:
             if thresholds.size == 0:
                 continue
 
-            if gini is not None and (gini_best is None or gini > gini_best):
+            for threshold, gini in zip(thresholds, ginis):
                 curr_split = feature_vector < threshold
-
                 if self._min_samples_leaf is not None:
                     if np.sum(curr_split) < self._min_samples_leaf or np.sum(~curr_split) < self._min_samples_leaf:
                         continue
+
+                if gini_best is not None and gini <= gini_best:
+                    continue
 
                 feature_best = feature
                 gini_best = gini
@@ -186,6 +188,13 @@ class DecisionTree:
             predicted.append(self._predict_node(x, self._tree))
         return np.array(predicted)
 
-class LinearRegressionTree():
-    def __init__(self, feature_types, base_model_type=None, max_depth=None, min_samples_split=None, min_samples_leaf=None):
-        pass
+class LinearRegressionTree:
+    """Compatibility stub kept out of the contest solution.
+
+    The homework and contest tasks use ``DecisionTree`` for classification.
+    This class was present in the draft file but has no completed statement in
+    the assignment, so it is intentionally not exposed as a silent no-op.
+    """
+
+    def __init__(self, *args, **kwargs):
+        raise ValueError("LinearRegressionTree is not part of HW5 tasks; use DecisionTree instead.")
