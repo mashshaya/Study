@@ -124,7 +124,7 @@ def train_spinn(
     log_every: int = 25,
     weight_bc: float = 10.0,
     weight_anchor: float = 0.1,
-    model_path: str | Path = "best_pinn_model.pth",
+    model_path: str | Path = "data/best_pinn_model.pth",
 ) -> SpinnResult:
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     rows = []
